@@ -1,0 +1,32 @@
+ #include <SoftwareSerial.h>
+ SoftwareSerial BT(10,11); // RX, TX
+ int relay = 7;
+ char data;
+ void setup()
+{
+  pinMode(relay, OUTPUT);
+  digitalWrite(relay, LOW);
+
+  Serial.begin(9600);
+  BT.begin(9600);
+}
+
+void loop()
+{
+  if (BT.available())
+  {
+    data = BT.read();
+
+    if (data == '1')
+    {
+      digitalWrite(relay, HIGH); // Device ON
+    }
+
+    if (data == '0')
+    {
+      digitalWrite(relay, LOW); // Device OFF
+    }
+  }
+}
+
+

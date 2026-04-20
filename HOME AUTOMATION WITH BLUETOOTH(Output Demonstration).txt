@@ -1,0 +1,11 @@
+Output Demonstration:
+
+When 1 is sent from the mobile, the relay turns ON → bulb glows. 
+When 0 is sent, the relay turns OFF → bulb turns OFF.
+Example:
+Mobile Command
+Result
+1
+Light ON
+0
+Light OFF
